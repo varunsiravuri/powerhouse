@@ -4,6 +4,7 @@ import { MessageRole , MessageType } from "@/generated/prisma/enums";
 import { Fragment } from "@/generated/prisma/client";
 import { Card } from "@/components/ui/card";
 import {cn} from "@/lib/utils";
+import Image from "next/image";
 
 interface UserMessageProps {
     content: string;
@@ -42,7 +43,13 @@ const AssistantMessage = ({
             type ==="ERROR"&& "text-read-700 dark:text-red-500",
         )}>
             <div className="flex items-center gap-2 pl-2 mb-2">
-                {/*TODO: add logo */}
+                <Image
+                    src="/logo.svg"
+                    alt="POWERHOUSE"
+                    width={28}
+                    height={28}
+                    className="shrink-0"
+                />
                 <span className="text-sm font-medium ">POWERHOUSE</span>
                 <span className="text-xs text-muted-foreground opacity-0 transition-opacity
                 group-hover:opacity-100">
