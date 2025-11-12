@@ -5,6 +5,7 @@ import { Fragment } from "@/generated/prisma/client";
 import { Card } from "@/components/ui/card";
 import {cn} from "@/lib/utils";
 import Image from "next/image";
+import { Code2Icon } from "lucide-react";
 
 interface UserMessageProps {
     content: string;
@@ -19,6 +20,30 @@ const UserMessage = ({content}: UserMessageProps)=> {
         </div>
     )
 }
+
+interface FragmentCardProps {
+    fragment: Fragment;
+    isActiveFragment: boolean;
+    onFragmentClick: (fragement: Fragment) => void;
+};
+
+const FragmentCard = ({
+    fragment,
+    isActiveFragment,
+    onFragmentClick,
+}: FragmentCardProps) => {
+    return (
+        <button className={cn(
+            "flex items-start. text-start gap-2 border rounded-lg bg-muted w-fit p-3 hover:bg-secondary transition-colors",
+            isActiveFragment && "bg-primary text-primary-foreground border-primary hover:bg-primary",
+
+        )}
+        onClick={() => onFragmentClick(fragment)}>
+            <Code2Icon className="size-4 mt/>
+        </button>
+
+    )
+};
 
 interface AssistantMessageProps{
     content: string;
@@ -58,6 +83,14 @@ const AssistantMessage = ({
             </div>
             <div className="pl-8.5 flex flex-col gap-y-4">
                 <span>{content}</span>
+                {fragment && type === "RESULT" && (
+                    <FragmentCard
+                        fragment={fragment}
+                        isActiveFragment={isActiveFragment}
+                        onFragmentClick={onFragmentClick}
+                    />
+
+                )}
             </div>
         </div>
     )
