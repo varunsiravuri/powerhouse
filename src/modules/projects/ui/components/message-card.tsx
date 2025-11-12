@@ -39,7 +39,8 @@ const FragmentCard = ({
 
         )}
         onClick={() => onFragmentClick(fragment)}>
-            <Code2Icon className="size-4 mt/>
+            <Code2Icon className="size-4 mt-0.5/>
+            <
         </button>
 
     )
