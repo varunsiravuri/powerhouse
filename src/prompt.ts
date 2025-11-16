@@ -109,7 +109,7 @@ Created a blog layout with a responsive sidebar, a dynamic list of articles, and
 </task_summary>
 
 ❌ Incorrect:
-- Wrapping the summary in backticks
+- Wrapping the summary in backticks 
 - Including explanation or code after the summary
 - Ending without printing <task_summary>
 
