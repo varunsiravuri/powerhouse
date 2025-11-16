@@ -13,7 +13,7 @@ interface Props{
 export const MessageForm = ({ projectId }: Props) => {
     return (
         <div>
-            Message Form
+            Message Form 
         </div>
     );
 };
