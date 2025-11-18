@@ -16,10 +16,28 @@ interface Props{
     projectId: String;
 };
 
+const formSchema =z.object({
+    value: z.string()
+        .min(1, {message: "Value is required"})
+        .max(10000, {message: "Value is too long"}),
+})
+
 export const MessageForm = ({ projectId }: Props) => {
+
+    const form = useForm<z.infer<typeof formSchema>>({
+        resolver: zodResolver(formSchema),
+        defaultValues: {
+            value: "",
+        },
+    });
+
+    const onSubmit = (values: z.infer<typeof formSchema>) => {
+        console.log(values);
+    }
+
     return (
-        <div>
-            Message Form 
-        </div>
+      <Form {...form}>
+        <form onSubmit={form.handleSubmit(onSubmit)}>Message Form</form>
+      </Form>
     );
 };
