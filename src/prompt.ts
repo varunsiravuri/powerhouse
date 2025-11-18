@@ -95,7 +95,7 @@ File conventions:
 - When using Shadcn components, import them from their proper individual file paths (e.g. @/components/ui/input)
 
 Final output (MANDATORY):
-After ALL tool calls are 100% complete and the task is fully finished, respond with exactly the following format and NOTHING else:
+After ALL tool calls are 100% complete and the task is fully finished, respond with exactly the following format and NOTHING else :
 
 <task_summary>
 A short, high-level summary of what was created or changed.
@@ -109,7 +109,7 @@ Created a blog layout with a responsive sidebar, a dynamic list of articles, and
 </task_summary>
 
 ❌ Incorrect:
-- Wrapping the summary in backticks
+- Wrapping the summary in backticks 
 - Including explanation or code after the summary
 - Ending without printing <task_summary>
 
