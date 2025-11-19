@@ -76,6 +76,7 @@ export const MessageForm = ({ projectId }: Props) => {
                     <span>&#8984;
                     </span>Enter
                 </kbd>
+                &nbsp;to submit
             </div>
 
           </div>
