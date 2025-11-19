@@ -24,7 +24,7 @@ const formSchema =z.object({
 
 export const MessageForm = ({ projectId }: Props) => {
     const [isFocused, serIsFocused]= useState(false);
-    const showUsage =false;
+    const showUsage = false;
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
@@ -42,7 +42,7 @@ export const MessageForm = ({ projectId }: Props) => {
           onSubmit={form.handleSubmit(onSubmit)}
           className={cn(
             "relative border p-4 pt-1 rounded-xl bg-sidebar dark:bg:sidebar transition-all",
-            isFocused && "shadow-xs"
+            isFocused && "shadow-xs",
             showUsage && "rounded-t-none",
           )}
         >
