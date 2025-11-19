@@ -23,7 +23,7 @@ const formSchema =z.object({
 })
 
 export const MessageForm = ({ projectId }: Props) => {
-    const [isFocused, serIsFocused]= useState(false);
+    const [isFocused, setIsFocused]= useState(false);
     const showUsage = false;
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
@@ -46,7 +46,28 @@ export const MessageForm = ({ projectId }: Props) => {
             showUsage && "rounded-t-none",
           )}
         >
-          Message Form
+          <FormField 
+            control ={form.control}
+            name="value"
+            render={({field}) =>(
+                <TextareaAutosize
+                    {...field}
+                    onFocus={()=> setIsFocused(true)}
+                    onBlur={() => setIsFocused(false)}
+                    minRows={2}
+                    maxRows={8}
+                    className="pt-4 resize-none border-none w-full outline-none bg-transparent"
+                    placeholder=" Turn your Ideas into reality! "
+                    onKeyDown={(e) => {
+                        if(e.key === "Enter" && (e.ctrlKey || e.metaKey)) {
+                            e.preventDefault();
+                            form.handleSubmit(onSubmit)(e);
+                        }
+                    }}
+
+                />
+            )}
+          />
         </form>
       </Form>
     );
