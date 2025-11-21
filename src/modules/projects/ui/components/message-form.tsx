@@ -13,7 +13,7 @@ import {Button} from "@/components/ui/button";
 import {Form, FormField} from "@/components/ui/form";
 
 interface Props{
-    projectId: String;
+    projectId: string;
 };
 
 const formSchema =z.object({
@@ -23,19 +23,27 @@ const formSchema =z.object({
 })
 
 export const MessageForm = ({ projectId }: Props) => {
-    const [isFocused, setIsFocused]= useState(false);
-    const showUsage = false;
+    const trpc =useTRPC();
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
             value: "",
         },
     });
-
-    const onSubmit = (values: z.infer<typeof formSchema>) => {
-        console.log(values);
+    
+    const createMessage = useMutation(trpc.messages.create.mutationOptions());
+    
+    const onSubmit = async (values: z.infer<typeof formSchema>) => {
+        await createMessage.mutateAsync({
+            value: values.value,
+            projectId,
+        });
     }
-
+    const [isFocused, setIsFocused]= useState(false);
+    const showUsage = false;
+    const isPending = createMessage.isPending;
+    const isDisabled= isPending || !form.formState.isValid;
+    
     return (
       <Form {...form}>
         <form
@@ -52,6 +60,7 @@ export const MessageForm = ({ projectId }: Props) => {
             render={({field}) =>(
                 <TextareaAutosize
                     {...field}
+                    disabled={isPending}
                     onFocus={()=> setIsFocused(true)}
                     onBlur={() => setIsFocused(false)}
                     minRows={2}
@@ -79,7 +88,9 @@ export const MessageForm = ({ projectId }: Props) => {
                 &nbsp;to submit
             </div>
             <Button
-              className={cn()}>
+              className={cn(
+                "size-8 rounded-full",
+              )}>
                 <ArrowUpIcon />
             </Button>
           </div>
