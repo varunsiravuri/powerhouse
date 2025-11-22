@@ -39,7 +39,31 @@ export const ProjectHeader = ({projectId }: Props ) => {
     );
     return (
       <header className="p-2 flex justify-between items-center border-b">
-        Header
+        <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="focus-visible:ring-0 hover:bg-transparent hover:opacity-75
+                  transparent-opacity pl-2!"
+                >
+                  <Image src="/logo.svg" alt="POWER HOUSE" width={18} height={18}/>
+                  <span className="text-sm font-medium">{project.name}</span>
+                  <ChevronDownIcon />  
+                </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent side="bottom" align="start">
+                <DropdownMenuItem asChild>
+                    <Link href="/">
+                      <ChevronLeftIcon />
+                      <span>
+                         Go to Dashboard
+                      </span>
+                    </Link>
+                </DropdownMenuItem>
+
+            </DropdownMenuContent>
+        </DropdownMenu>
       </header>
     );
    
