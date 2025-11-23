@@ -61,7 +61,12 @@ export const ProjectHeader = ({projectId }: Props ) => {
                       </span>
                     </Link>
                 </DropdownMenuItem>
-
+                <DropdownMenuSeparator />
+                <DropdownMenuSub>
+                    <DropdownMenuSubTrigger className="gap-2">
+                        
+                    </DropdownMenuSubTrigger>
+                </DropdownMenuSub>
             </DropdownMenuContent>
         </DropdownMenu>
       </header>
