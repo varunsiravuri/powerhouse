@@ -37,6 +37,9 @@ export const ProjectHeader = ({projectId }: Props ) => {
         trpc.projects.getOne.queryOptions({id:projectId})
 
     );
+
+    const { setTheme , theme } = useTheme();
+
     return (
       <header className="p-2 flex justify-between items-center border-b">
         <DropdownMenu>
