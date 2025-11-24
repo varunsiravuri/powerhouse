@@ -70,17 +70,14 @@ export const ProjectHeader = ({projectId }: Props ) => {
               <DropdownMenuPortal>
                 <DropdownMenuSubContent>
                   <DropdownMenuRadioGroup
-                    value="light"
-                    onValueChange={() => {}}
+                    value={theme}
+                    onValueChange={setTheme}
                   >
                     <DropdownMenuRadioItem value="light">
                       <span>Light</span>
                     </DropdownMenuRadioItem>
                     <DropdownMenuRadioItem value="dark">
                       <span>Dark</span>
-                    </DropdownMenuRadioItem>
-                    <DropdownMenuRadioItem value="system">
-                      <span>System</span>
                     </DropdownMenuRadioItem>
                   </DropdownMenuRadioGroup>
                 </DropdownMenuSubContent>
