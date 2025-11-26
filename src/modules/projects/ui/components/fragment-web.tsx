@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ExternalLinkIcon, RefreshCcwIcon } from "lucide-react";
 
 import { Fragment } from "@/generated/prisma/client";
+
 import { Button } from "@/components/ui/button";
 
 interface Props{
@@ -16,7 +17,7 @@ export function FragmentWeb({data}: Props) {
         setFragmentKey((prev) => prev +1);
     };
 
-    const handleKey = ()=> {
+    const handleCopy = ()=> {
         navigator.clipboard.writeText(data.sandboxUrl);
         setCopied(true);
         setTimeout(()=> setCopied(false), 2000);
@@ -24,13 +25,13 @@ export function FragmentWeb({data}: Props) {
     return (
       <div className="flex flex-col w-full h-full">
         <div className="p-2 border-b bg-sidebar felx items-center gap-x-2">
-          <Button size="sm" variant="outline" onClick={() => {}}>
+          <Button size="sm" variant="outline" onClick={onRefresh}>
             <RefreshCcwIcon />
           </Button>
           <Button size="sm"
             variant="outline"
-            onClick={() => {}}
-            disabled={false}
+            onClick={handleCopy}
+            disabled={!data.sandboxUrl || copied}
             className="flex-1 justify-start text-start font-normal">
             <span className="truncate">
                 {data.sandboxUrl}
