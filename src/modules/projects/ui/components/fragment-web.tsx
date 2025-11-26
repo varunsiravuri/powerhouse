@@ -11,6 +11,16 @@ interface Props{
 export function FragmentWeb({data}: Props) {
     const [copied,setCopied] = useState(false);
     const[fragmentKey , setFragmentKey] = useState(0);
+
+    const onRefresh = () => {
+        setFragmentKey((prev) => prev +1);
+    };
+
+    const handleKey = ()=> {
+        navigator.clipboard.writeText(data.sandboxUrl);
+        setCopied(true);
+        setTimeout(()=> setCopied(false), 2000);
+    };
     return (
       <div className="flex flex-col w-full h-full">
         <div className="p-2 border-b bg-sidebar felx items-center gap-x-2">
