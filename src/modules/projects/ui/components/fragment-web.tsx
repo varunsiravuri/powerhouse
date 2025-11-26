@@ -1,0 +1,49 @@
+import { useState } from "react";
+import { ExternalLinkIcon, RefreshCcwIcon } from "lucide-react";
+
+import { Fragment } from "@/generated/prisma/client";
+import { Button } from "@/components/ui/button";
+
+interface Props{
+    data: Fragment;
+};
+
+export function FragmentWeb({data}: Props) {
+    const [copied,setCopied] = useState(false);
+    const[fragmentKey , setFragmentKey] = useState(0);
+    return (
+      <div className="flex flex-col w-full h-full">
+        <div className="p-2 border-b bg-sidebar felx items-center gap-x-2">
+          <Button size="sm" variant="outline" onClick={() => {}}>
+            <RefreshCcwIcon />
+          </Button>
+          <Button size="sm"
+            variant="outline"
+            onClick={() => {}}
+            disabled={false}
+            className="flex-1 justify-start text-start font-normal">
+            <span className="truncate">
+                {data.sandboxUrl}
+            </span>
+          </Button>
+          <Button
+            size="sm"
+            disabled={!data.sandboxUrl}
+            variant="outline"
+            onClick={() => {
+                if (!data.sandboxUrl) return;
+                window.open(data.sandboxUrl, "_blank");
+            }}
+          >
+            <ExternalLinkIcon />
+          </Button>
+        </div>
+        <iframe
+          className="h-full w-full"
+          sandbox="allow-forms allow-scripts allow-same-origin"
+          loading="lazy"
+          src={data.sandboxUrl}
+        />
+      </div>
+    );
+}
