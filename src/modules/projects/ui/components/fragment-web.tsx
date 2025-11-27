@@ -50,6 +50,7 @@ export function FragmentWeb({data}: Props) {
           </Button>
         </div>
         <iframe
+          key={fragmentKey}
           className="h-full w-full"
           sandbox="allow-forms allow-scripts allow-same-origin"
           loading="lazy"
