@@ -7,12 +7,15 @@ import { MessageContainer } from "../components/messages-container";
 import { ProjectHeader } from "../components/project-header";
 import { FragmentWeb } from "../components/fragment-web";
 
+import { Tabs, TabsContent, TabsList, TabsTrigger} from "@/components/ui/tabs";
+
 interface Props {
     projectId: string;
 };
 
 export const ProjectView = ({ projectId }: Props) => {
     const [activeFragment ,setActiveFragment ] = useState<Fragment | null>(null);
+    const [tabState, setTabState]= useState<"preview" | "code">("preview");
     return (
       <div className="h-screen">
         <ResizablePanelGroup direction="horizontal">
@@ -35,7 +38,14 @@ export const ProjectView = ({ projectId }: Props) => {
           </ResizablePanel>
           <ResizableHandle withHandle />
           <ResizablePanel defaultSize={65} minSize={50}>
-            {!!activeFragment && <FragmentWeb data={activeFragment} />}
+            <Tabs
+              className="h-full gap-y-0"
+              defaultValue="preview"
+              value={tabState}
+              onValueChange={(value) => setTabState(value as "preview" | "code")}
+            >
+              {!!activeFragment && <FragmentWeb data={activeFragment} />}
+            </Tabs>
           </ResizablePanel>
         </ResizablePanelGroup>
       </div>
