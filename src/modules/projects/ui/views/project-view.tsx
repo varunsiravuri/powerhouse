@@ -8,7 +8,9 @@ import { ProjectHeader } from "../components/project-header";
 import { FragmentWeb } from "../components/fragment-web";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger} from "@/components/ui/tabs";
-import { EyeIcon , CodeIcon } from "lucide-react";
+import { EyeIcon , CodeIcon, CrownIcon } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 interface Props {
     projectId: string;
@@ -57,7 +59,11 @@ export const ProjectView = ({ projectId }: Props) => {
                   </TabsTrigger>
                 </TabsList>
                 <div className="ml-auto flex items-center gap-x-2">
-
+                  <Button asChild size="sm" variant="default">
+                    <Link href="/pricing">
+                      <CrownIcon /> Upgrade
+                    </Link>
+                  </Button>
                 </div>
                 {!!activeFragment && <FragmentWeb data={activeFragment} />}
               </div>
