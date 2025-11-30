@@ -42,9 +42,15 @@ export const ProjectView = ({ projectId }: Props) => {
               className="h-full gap-y-0"
               defaultValue="preview"
               value={tabState}
-              onValueChange={(value) => setTabState(value as "preview" | "code")}
+              onValueChange={(value) =>
+                setTabState(value as "preview" | "code")
+              }
             >
-              {!!activeFragment && <FragmentWeb data={activeFragment} />}
+              <div className="w-full flex items-center p-2 border-b gap-x-2">
+                <TabsList className="h-8 p-0 border rounded-md">
+                  {!!activeFragment && <FragmentWeb data={activeFragment} />}
+                </TabsList>
+              </div>
             </Tabs>
           </ResizablePanel>
         </ResizablePanelGroup>
