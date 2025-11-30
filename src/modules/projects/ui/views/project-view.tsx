@@ -65,7 +65,12 @@ export const ProjectView = ({ projectId }: Props) => {
                     </Link>
                   </Button>
                 </div>
-                {!!activeFragment && <FragmentWeb data={activeFragment} />}
+                <TabsContent value="preview">
+                  {!!activeFragment && <FragmentWeb data={activeFragment} />}
+                </TabsContent>
+                <TabsContent value="code">
+                  <p>TODO: Code</p>
+                </TabsContent>
               </div>
             </Tabs>
           </ResizablePanel>
