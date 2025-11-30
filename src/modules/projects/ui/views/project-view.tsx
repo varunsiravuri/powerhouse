@@ -50,10 +50,16 @@ export const ProjectView = ({ projectId }: Props) => {
               <div className="w-full flex items-center p-2 border-b gap-x-2">
                 <TabsList className="h-8 p-0 border rounded-md">
                   <TabsTrigger value="preview" className="rounded-md">
-                      <EyeIcon />
+                    <EyeIcon /> <span>Demo</span>
                   </TabsTrigger>
-                  {!!activeFragment && <FragmentWeb data={activeFragment} />}
+                  <TabsTrigger value="code" className="rounded-md">
+                    <CodeIcon /> <span>Code</span>
+                  </TabsTrigger>
                 </TabsList>
+                <div className="ml-auto flex items-center gap-x-2">
+
+                </div>
+                {!!activeFragment && <FragmentWeb data={activeFragment} />}
               </div>
             </Tabs>
           </ResizablePanel>
