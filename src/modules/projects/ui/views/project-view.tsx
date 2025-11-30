@@ -8,6 +8,7 @@ import { ProjectHeader } from "../components/project-header";
 import { FragmentWeb } from "../components/fragment-web";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger} from "@/components/ui/tabs";
+import { EyeIcon , CodeIcon } from "lucide-react";
 
 interface Props {
     projectId: string;
@@ -48,6 +49,9 @@ export const ProjectView = ({ projectId }: Props) => {
             >
               <div className="w-full flex items-center p-2 border-b gap-x-2">
                 <TabsList className="h-8 p-0 border rounded-md">
+                  <TabsTrigger value="preview" className="rounded-md">
+                      <EyeIcon />
+                  </TabsTrigger>
                   {!!activeFragment && <FragmentWeb data={activeFragment} />}
                 </TabsList>
               </div>
