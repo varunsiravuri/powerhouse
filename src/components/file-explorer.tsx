@@ -8,5 +8,21 @@ import { ResizableHandle,ResizablePanelGroup,ResizablePanel } from "./ui/resizab
 
 import { Breadcrumb, BreadcrumbEllipsis,BreadcrumbItem,BreadcrumbPage,BreadcrumbList,BreadcrumbSeparator } from "./ui/breadcrumb";
 
+type FileCollection = { [path: string]: string};
 
+function getLanguageFromExtension(filename: string): string{
+    const extension = filename.split(".").pop()?.toLowerCase();
+    return extension || "text";
+};
 
+interface FileExplorerProps{
+    files: FileCollection;
+};
+
+export const FileExplorer = ({
+    files,
+}:FileExplorerProps) =>{
+    return(
+        <Resi
+    )
+}
