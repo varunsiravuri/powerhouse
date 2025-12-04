@@ -1,7 +1,7 @@
 POWER HOUSE.
 WHERE YOU CAN TURN YOUR IDEAS INTO WEB APPLICATIONS.
 
-It is a lovable kind of application , where you can create
+It is a lovable kind of application , where you can create the web applications by giving the prompts.
 
 First, run the development server:
 
