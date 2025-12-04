@@ -1,9 +1,7 @@
-POWER HOUSE 
+POWER HOUSE.
 WHERE YOU CAN TURN YOUR IDEAS INTO WEB APPLICATIONS.
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
-
-## Getting Started
+It is a lovable kind of application , where you can create
 
 First, run the development server:
 
