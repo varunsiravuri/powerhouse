@@ -27,11 +27,11 @@ export const FileExplorer = ({
         return fileKeys.length > 0 ? fileKeys[0] : null;
 
     });
-    
+
     return(
         <ResizablePanelGroup direction="horizontal">
             <ResizablePanel defaultSize={30} minSize={30} className="bg-sidebar">
-                <p>TODO: Tree view</p>
+                <p>TODO: Tree view is yet to date. </p>
             </ResizablePanel>
             <ResizableHandle className="hover:bg-primary transition-colors" />
             <ResizablePanel defaultSize={70} minSize={50}>
