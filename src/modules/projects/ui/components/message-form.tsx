@@ -41,7 +41,7 @@ export const MessageForm = ({ projectId }: Props) => {
             //todo : usage status remaining to do 
         },
         onError: (error) => {
-            //todo : if error redirect to pricing page.
+            //todo : if error redirect to pricing page should be done.
             toast.error(error.message);
         },
     }));
