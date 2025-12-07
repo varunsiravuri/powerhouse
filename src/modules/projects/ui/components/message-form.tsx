@@ -38,7 +38,7 @@ export const MessageForm = ({ projectId }: Props) => {
             queryClient.invalidateQueries(
                 trpc.messages.getMany.queryOptions({ projectId}),
             );
-            //todo : usage status remaining
+            //todo : usage status remaining to do 
         },
         onError: (error) => {
             //todo : if error redirect to pricing page.

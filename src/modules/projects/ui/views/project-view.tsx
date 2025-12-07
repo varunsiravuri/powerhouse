@@ -70,7 +70,7 @@ export const ProjectView = ({ projectId }: Props) => {
                   {!!activeFragment && <FragmentWeb data={activeFragment} />}
                 </TabsContent>
                 <TabsContent value="code">
-                  <p>TODO: Code</p>
+                  <p>TODO: Code update </p>
                 </TabsContent>
               </div>
             </Tabs>
