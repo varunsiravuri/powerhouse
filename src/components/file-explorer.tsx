@@ -22,7 +22,21 @@ interface FileExplorerProps{
 export const FileExplorer = ({
     files,
 }:FileExplorerProps) =>{
+    const [selectedFile, setSelectedFile] = useState<string | null>(() => {
+        const fileKeys = Object.keys(files);
+        return fileKeys.length > 0 ? fileKeys[0] : null;
+
+    });
+    
     return(
-        
+        <ResizablePanelGroup direction="horizontal">
+            <ResizablePanel defaultSize={30} minSize={30} className="bg-sidebar">
+                <p>TODO: Tree view</p>
+            </ResizablePanel>
+            <ResizableHandle className="hover:bg-primary transition-colors" />
+            <ResizablePanel defaultSize={70} minSize={50}>
+
+            </ResizablePanel>
+        </ResizablePanelGroup>
     )
 };
