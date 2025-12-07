@@ -1,6 +1,7 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+POWER HOUSE.
+WHERE YOU CAN TURN YOUR IDEAS INTO WEB APPLICATIONS.
 
-## Getting Started
+It is a lovable kind of application , where you can create the web applications by giving the prompts.
 
 First, run the development server:
 
