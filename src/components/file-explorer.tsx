@@ -8,6 +8,7 @@ import { ResizableHandle,ResizablePanelGroup,ResizablePanel } from "./ui/resizab
 
 import { Breadcrumb, BreadcrumbEllipsis,BreadcrumbItem,BreadcrumbPage,BreadcrumbList,BreadcrumbSeparator } from "./ui/breadcrumb";
 import { convertFilesToTreeItems } from "@/lib/utils";
+import { TreeView } from "./tree-view";
 
 type FileCollection = { [path: string]: string};
 
@@ -43,7 +44,7 @@ export const FileExplorer = ({
                 <TreeView
                     data={treeData}
                     value={selectedFile}
-                    onSelet={handleFileSelect}
+                    onSelect={handleFileSelect}
                 />
             </ResizablePanel>
             <ResizableHandle className="hover:bg-primary transition-colors" />
