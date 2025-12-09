@@ -11,7 +11,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger} from "@/components/ui/tabs";
 import { EyeIcon , CodeIcon, CrownIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { CodeView } from "@/components/code-view";
+import { FileExplorer } from "@/components/file-explorer";
 
 interface Props {
     projectId: string;
@@ -69,8 +69,12 @@ export const ProjectView = ({ projectId }: Props) => {
                 <TabsContent value="preview">
                   {!!activeFragment && <FragmentWeb data={activeFragment} />}
                 </TabsContent>
-                <TabsContent value="code">
-                  <p>TODO: Code update </p>
+                <TabsContent value="code" className="min-h-0">
+                  {!!activeFragment?.files && (
+                    <FileExplorer
+                       files={activeFragment.files as {[path: string]: string }}
+                    />
+                  )}
                 </TabsContent>
               </div>
             </Tabs>
