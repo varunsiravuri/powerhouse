@@ -32,6 +32,11 @@ export const FileExplorer = ({
         return convertFilesToTreeItems(files);
 
     }, [files]);
+    const handleFileSelect = useCallback((
+        filePath: string
+    ) => {
+
+    }, []);
     return(
         <ResizablePanelGroup direction="horizontal">
             <ResizablePanel defaultSize={30} minSize={30} className="bg-sidebar">
