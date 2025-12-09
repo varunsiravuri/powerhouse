@@ -1,4 +1,16 @@
 import { TreeItem } from "@/types";
+import { 
+    Sidebar,
+    SidebarContent,
+    SidebarGroup,
+    SidebarGroupContent,
+    SidebarMenu,
+    SidebarMenuButton,
+    SidebarMenuItem,
+    SidebarMenuSub,
+    SidebarProvider,
+    SidebarRail,
+ } from "@/components/ui/sidebar";
 
 interface TreeViewProps {
     data: TreeItem[];
