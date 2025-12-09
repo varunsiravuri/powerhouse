@@ -7,6 +7,7 @@ import { CodeView } from "./code-view";
 import { ResizableHandle,ResizablePanelGroup,ResizablePanel } from "./ui/resizable";
 
 import { Breadcrumb, BreadcrumbEllipsis,BreadcrumbItem,BreadcrumbPage,BreadcrumbList,BreadcrumbSeparator } from "./ui/breadcrumb";
+import { convertFilesToTreeItems } from "@/lib/utils";
 
 type FileCollection = { [path: string]: string};
 
@@ -27,7 +28,10 @@ export const FileExplorer = ({
         return fileKeys.length > 0 ? fileKeys[0] : null;
 
     });
+    const treeData = useMemo(() => {
+        return convertFilesToTreeItems(files);
 
+    }, [files]);
     return(
         <ResizablePanelGroup direction="horizontal">
             <ResizablePanel defaultSize={30} minSize={30} className="bg-sidebar">
