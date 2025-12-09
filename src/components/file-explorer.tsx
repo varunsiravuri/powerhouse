@@ -35,8 +35,8 @@ export const FileExplorer = ({
     const handleFileSelect = useCallback((
         filePath: string
     ) => {
-
-    }, []);
+        setSelectedFile(filePath);
+    }, [files]);
     return(
         <ResizablePanelGroup direction="horizontal">
             <ResizablePanel defaultSize={30} minSize={30} className="bg-sidebar">
