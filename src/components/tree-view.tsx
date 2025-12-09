@@ -25,6 +25,15 @@ export const TreeView = ({
 
 }: TreeViewProps) => {
     return(
-        <p>{JSON.stringify(data)}</p>
+        <SidebarProvider>
+            <Sidebar collapsible="none" className="w-full">
+                <SidebarContent>
+                    <SidebarGroup>
+                        
+                    </SidebarGroup>
+                </SidebarContent>
+            </Sidebar>
+        </SidebarProvider>
     )
+
 };
