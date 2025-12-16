@@ -85,7 +85,11 @@ const Tree = ({item, selectedValue, onSelect, parentPath}: TreeProps) => {
             defaultOpen>
                 <CollapsibleTrigger asChild>
                 <SidebarMenuButton>
-                    <ChevronRightIcon/>
+                    <ChevronRightIcon className="transition-transform"/>
+                    <FolderIcon />
+                    <span className="truncate">
+                        {name}
+                    </span>
                 </SidebarMenuButton>
                 </CollapsibleTrigger>
                 
