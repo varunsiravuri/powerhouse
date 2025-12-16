@@ -92,7 +92,8 @@ const Tree = ({item, selectedValue, onSelect, parentPath}: TreeProps) => {
                     </span>
                 </SidebarMenuButton>
                 </CollapsibleTrigger>
-                
+                <CollapsibleContent>
+                </CollapsibleContent>
             </Collapsible>
         </SidebarMenuItem>
     )
