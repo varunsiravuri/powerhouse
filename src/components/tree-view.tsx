@@ -18,7 +18,7 @@ import {
     SidebarProvider,
     SidebarRail,
  } from "@/components/ui/sidebar";
-import { FileIcon } from "lucide-react";
+import { ChevronRightIcon, FileIcon } from "lucide-react";
 
 interface TreeViewProps {
     data: TreeItem[];
@@ -81,7 +81,13 @@ const Tree = ({item, selectedValue, onSelect, parentPath}: TreeProps) => {
 
     return (
         <SidebarMenuItem>
-            <Collapsible className="group/collapsible [&[data-state=oepn]>button>svg:first-child]:rotate-90">
+            <Collapsible className="group/collapsible [&[data-state=oepn]>button>svg:first-child]:rotate-90"
+            defaultOpen>
+                <CollapsibleTrigger asChild>
+                <SidebarMenuButton>
+                    <ChevronRightIcon/>
+                </SidebarMenuButton>
+                </CollapsibleTrigger>
                 
             </Collapsible>
         </SidebarMenuItem>
